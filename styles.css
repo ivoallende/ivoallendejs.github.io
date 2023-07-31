@@ -1,0 +1,251 @@
+*{
+    font-family: 'Mukta', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-image: url("./784181.webp");
+    height: 200px;
+}
+
+header h1{
+    text-align: center;
+    font-size: 35px;
+    color:  #fff;
+    padding: 30px 0;
+}
+
+.contenedor{
+    max-width: 12000px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    /* se oculta lo que queda fuera del contenedor*/
+
+    contain: paint;
+}
+
+.contenedor .contenedor-items{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 30px ;
+    grid-row-gap: 30px;
+    width: 100%;
+    transition: .2s;
+}
+
+.contenedor .contenedor-items .item{
+    max-width: 200px;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+}
+
+.contenedor-items .item:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+}
+.contenedor-items .item .img-item{
+    width: 100%;
+}
+
+.contenedor-items .item .titulo-item{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contenedor-items .item .precio-item{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.contenedor-items .item .boton-item{
+    display: block;
+    margin:10px;
+    border:none;
+    background: black;
+    color:white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.contenedor-items .item .boton-item:hover{
+    background-color: rgb(0, 53, 0);
+    color: greenyellow
+}
+
+
+/* Seccion de Carrito */
+
+
+.carrito{
+    border: 1px solid #666;
+    width: 35%;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: auto;
+    position: sticky !important;
+    top: 0;
+    transition: .2s;
+    opacity: 0;
+    margin-right: -100%;
+}
+
+
+.carrito .header-carrito{
+    background-color: black;
+    color : white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.carrito .carrito-item{
+    display: flex;
+    align-items: center; 
+    position: relative;
+    padding: 1rem;
+    border-bottom:1px solid #666 ;
+}
+
+.carrito .carrito-item img{
+    margin-right: 20px;
+
+}
+
+.carrito .carrito-item .carrito-item-titulo{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.carrito .carrito-item .selector-cantindad{
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.carrito .carrito-item .carrito-item-cantidad{
+    border: none;
+    font-size: 18px;
+    background: transparent;
+    display: inline-block;
+    width: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.carrito .carrito-item .selector-cantidad i{
+    font-size: 18px ;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #666;
+    cursor: pointer;
+}
+
+.carrito .carrito-item .carrito-item-precio{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 5px;
+
+}
+
+.carrito .carrito-item .btn-eliminar{
+    position: absolute;
+    top:15px;
+    right: 15px;
+    color:black;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    border:solid 1px black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 20;
+}
+
+.carrito .carrito-item .btn-eliminar i{
+    pointer-events: none;
+}
+
+.carrito-total{
+    background-color: #f3f3f3;
+    padding: 30px;
+}
+
+.carrito-total .fila{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.carrito-total .btn-pagar{
+    display: block;
+    width: 100%;
+    border: none;
+    background: black;
+    color:white;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.carrito-total .btn-pagar:hover{
+    scale: 1.05;
+}
+
+
+
+.carrito-item-detalle{
+    display: flex;
+    flex-direction: column;
+}
+
+/* seccion responsiva */
+
+@media screen and (max-width : 850px){
+    .contenedor{
+        display: block;
+    }
+
+    .contenedor-items{
+        width: 100% !important;
+    }
+
+    .carrito{
+        width: 100%;
+    }
+}
